@@ -4,9 +4,9 @@ export default class Users extends BaseSchema {
   protected tableName = 'users'
 
   public async up () {
-    this.schema.alterTable(this.tableName, (table) => {
+    this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('first_nanme')
+      table.string('first_name')
       table.string('last_name')
       table.string('email').unique()
       table.text('password').nullable()
